@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import Header from "./components2/Header";
+import GameBoard from "./components2/GameBoard";
+import Footer from "./components2/Footer";
+import StartButton from "./components2/StartButton";
 
 const buttonColors = ["green", "red", "yellow", "blue"];
 
@@ -12,7 +16,7 @@ export default function App() {
   const [pressed, setPressed] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const [status, setStatus] = useState("idle"); 
+  const [status, setStatus] = useState("idle"); // idle | playing | over
 
   function playSound(color) {
     const audio = new Audio(`/sounds/${color}.mp3`);
@@ -37,7 +41,9 @@ export default function App() {
   }
 
   function addStep() {
-    const randomColor = buttonColors[Math.floor(Math.random() * buttonColors.length)];
+    const randomColor =
+      buttonColors[Math.floor(Math.random() * buttonColors.length)];
+
     setGamePattern((prev) => [...prev, randomColor]);
     setUserPattern([]);
     setLevel((prev) => prev + 1);
@@ -55,6 +61,7 @@ export default function App() {
     setTimeout(() => document.body.classList.remove("game-over"), 200);
   }
 
+  // toca a sequência inteira quando mudar
   useEffect(() => {
     if (!started) return;
     if (gamePattern.length === 0) return;
@@ -72,6 +79,7 @@ export default function App() {
     });
   }, [gamePattern, started]);
 
+  // iniciar com tecla
   useEffect(() => {
     function handleKeyDown() {
       if (!started) startGame();
@@ -80,7 +88,7 @@ export default function App() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [started]);
 
-  function handleClick(color) {
+  function handlePadClick(color) {
     if (!started) return;
     if (isPlaying) return;
 
@@ -105,39 +113,21 @@ export default function App() {
 
   return (
     <div className="app">
-      <div className="bg-decor"></div>
+      <div className="bg-decor" />
 
       <main className="main">
-        <h1 id="level-title" className="title">Simon Game</h1>
+        <Header status={status} level={level} />
 
-        <p className="status">
-          {status === "idle" && "Press Start (or any key) to begin"}
-          {status === "playing" && `Level ${level}`}
-          {status === "over" && `Game Over — you reached level ${level}`}
-        </p>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: 24 }}>
+  <StartButton status={status} onStart={startGame} />
+</div>
 
-        <div style={{display:'flex',justifyContent:'center',marginBottom:24}}>
-          <button onClick={startGame} className="start-btn">
-            {status === "playing" ? "Restart" : "Start"}
-          </button>
-        </div>
-
-        <div className="container">
-          <div className="row">
-            <div className={`btn green ${pressed === "green" ? "pressed" : ""}`} onClick={() => handleClick("green")}></div>
-            <div className={`btn red ${pressed === "red" ? "pressed" : ""}`} onClick={() => handleClick("red")}></div>
-          </div>
-
-          <div className="row">
-            <div className={`btn yellow ${pressed === "yellow" ? "pressed" : ""}`} onClick={() => handleClick("yellow")}></div>
-            <div className={`btn blue ${pressed === "blue" ? "pressed" : ""}`} onClick={() => handleClick("blue")}></div>
-          </div>
-        </div>
+        <GameBoard pressed={pressed} onPadClick={handlePadClick} />
 
         <p className="tip">Tip: wait for the sequence to finish 👀</p>
       </main>
 
-      <footer className="footer">Made with ❤️ by Tamiris Reis</footer>
+      <Footer />
     </div>
   );
 }
