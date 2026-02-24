@@ -13,6 +13,11 @@ It focuses on state management, component architecture, and interactive UI behav
 The application generates a random color sequence that the user must reproduce correctly.  
 Each successful round increases the difficulty by adding a new step.
 
+## Demo
+
+Live version:  
+https://simon-game-react-nine.vercel.app/
+
 ## Features
 
 - Interactive color pads with visual feedback
@@ -83,6 +88,11 @@ O foco está no gerenciamento de estado, arquitetura em componentes e comportame
 
 A aplicação gera uma sequência aleatória de cores que o usuário deve reproduzir.  
 A cada rodada bem-sucedida, a dificuldade aumenta com a adição de um novo passo.
+
+## Demo
+
+Versão online:  
+https://simon-game-react-nine.vercel.app/
 
 ## Funcionalidades
 
