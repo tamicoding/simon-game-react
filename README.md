@@ -19,13 +19,8 @@ https://simon-game-react-nine.vercel.app/
 
 ### Screenshot
 
-Adicione sua imagem aqui.
-
-Exemplo:
-
-```md
-![Preview do projeto](./caminho-da-sua-imagem.png)
-```
+![Versao desktop](./assets/readme/desktop.png)
+![Versao mobile](./assets/readme/mobile.png)
 
 ### Destaques Para Recrutadores
 
@@ -118,14 +113,8 @@ Este projeto foi desenvolvido para demonstrar:
 
 ### Contato e Links
 
-Adicione seus links aqui.
-
-Exemplo:
-
-```md
-- LinkedIn: https://www.linkedin.com/in/seu-perfil
-- GitHub: https://github.com/seu-usuario
-```
+- LinkedIn: https://www.linkedin.com/in/tamirisfreis/
+- GitHub: https://github.com/tamicoding
 
 ---
 
@@ -144,13 +133,8 @@ https://simon-game-react-nine.vercel.app/
 
 ### Screenshot
 
-Add your screenshot here.
-
-Example:
-
-```md
-![Project preview](./your-image-path.png)
-```
+![Desktop version](./assets/readme/desktop.png)
+![Mobile version](./assets/readme/mobile.png)
 
 ### Recruiter Highlights
 
@@ -243,14 +227,8 @@ This project was built to demonstrate:
 
 ### Contact and Links
 
-Add your links here.
-
-Example:
-
-```md
-- LinkedIn: https://www.linkedin.com/in/your-profile
-- GitHub: https://github.com/your-username
-```
+- LinkedIn: https://www.linkedin.com/in/tamirisfreis/
+- GitHub: https://github.com/tamicoding
 
 ---
 
