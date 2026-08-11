@@ -16,7 +16,7 @@ https://simon-game-react-nine.vercel.app/
 ![Versao desktop](./assets/readme/desktop.png)
 ![Versao mobile](./assets/readme/mobile.png)
 
-### Destaques Para Recrutadores
+### Destaques
 
 - Interface moderna com foco em hierarquia visual e microinterações
 - Lógica do jogo isolada em hook customizado
